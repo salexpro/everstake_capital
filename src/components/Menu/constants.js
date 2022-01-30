@@ -1,11 +1,19 @@
 const MENU = [
   {
-    name: 'Item 1',
-    link: '#item-1',
+    name: 'About',
+    link: '#about',
   },
   {
-    name: 'Item 2',
-    link: '#item-2',
+    name: 'Why',
+    link: '#why',
+  },
+  {
+    name: 'Portfolio',
+    link: '#portfolio',
+  },
+  {
+    name: 'Contact',
+    link: '#contact',
   },
 ]
 

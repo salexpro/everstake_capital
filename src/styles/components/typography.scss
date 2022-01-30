@@ -1,1 +1,19 @@
 // h1, h2, h3, p etc.
+h1,
+h2 {
+  letter-spacing: -0.01em;
+  font-feature-settings: 'zero' on, 'salt' on, 'ss03' on, 'ss05' on;
+  text-shadow: 4px 4px 0px rgba($white, 0.4);
+}
+
+h2 {
+  font-weight: 600;
+}
+
+p {
+  font-size: 18px;
+}
+
+.lead {
+  color: $gray-600;
+}

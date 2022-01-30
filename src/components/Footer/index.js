@@ -1,19 +1,29 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import { Container } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 
-import Menu from '~components/Menu'
+import logo from './img/logo.svg'
 
 import * as s from './style.module.scss'
 
 const Footer = ({ siteTitle }) => {
   return (
     <Container as="footer" className={s.footer}>
-      <div className={s.footer__logo}>{siteTitle}</div>
-      <Menu variant="footer" />
-      <div className={s.footer__copy}>
-        © 2021 {siteTitle}. All Rights Reserved
+      <span className={s.footer__copy}>
+        © All Rights Reserved, {new Date().getFullYear()}.
+      </span>
+      <div className={s.footer__logo}>
+        <img src={logo} alt={siteTitle} />
       </div>
+      <ul>
+        <li>
+          <a href="#">Terms of use</a>
+        </li>
+        <li>
+          <a href="#">Privacy police</a>
+        </li>
+      </ul>
     </Container>
   )
 }

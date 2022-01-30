@@ -1,32 +1,60 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import { StaticImage } from 'gatsby-plugin-image'
+
 import { Container } from 'react-bootstrap'
 
 import Layout from '../components/Layout'
 import S from '../components/seo'
 
-import Icon from '~components/Icon'
+import Hero from '../components/Hero'
+import Info from '../components/Info'
+import Cloud from '../components/Cloud'
+import Partners from '../components/Partners'
+import CTA from '../components/CTA'
 
 const IndexPage = () => (
   <Layout>
+    <S />
     <Container>
-      <S title="Home" />
-      <h1>Howdy!</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-      <StaticImage
-        src="../images/gatsby-icon.png"
-        layout="constrained"
-        width={300}
-        alt="A Gatsby logo"
-        style={{ marginBottom: `1.45rem` }}
-        placeholder="blurred"
+      <Hero />
+      <Info
+        data={{
+          header: 'We speak </programming> language',
+          descr:
+            'We have been running nodes and RPCs, developing smart contracts, and building blockchain products from scratch since 2018. On top of that, we train Rust, GO, and Solidity developers.',
+          button: {
+            label: 'Speak with us',
+            link: '#',
+            icon: 'chat',
+          },
+        }}
       />
-      <Icon name="globe" size={60} />
-      <p>
-        <Link to="/page-2/">Go to page 2</Link> <br />
-      </p>
+      <Info
+        data={{
+          header: 'We know how to get things done',
+          descr:
+            "It's hard to build something innovative from scratch alone. We developed dozens of products like Metaplex, Everlend, Astroport, and offer you our best practices.",
+          button: {
+            label: 'Get things done',
+            link: '#',
+            icon: 'check',
+          },
+        }}
+      />
+      <Info
+        data={{
+          header: "We're driven by ideas, too",
+          descr:
+            'Everstake Capital helps transform your vision into a product  and always respects your decisions.',
+          button: {
+            label: 'Pitch idea',
+            link: '#',
+            icon: 'bulb',
+          },
+        }}
+      />
+      <Cloud />
+      <Partners />
+      <CTA />
     </Container>
   </Layout>
 )
