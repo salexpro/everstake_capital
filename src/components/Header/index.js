@@ -9,12 +9,14 @@ import logo from './img/logo.svg'
 import * as s from './style.module.scss'
 
 const Header = ({ siteTitle }) => (
-  <Container as="header" className={s.header}>
-    <div className={s.header__logo}>
-      <img src={logo} alt={siteTitle} />
-    </div>
-    <Menu />
-  </Container>
+  <header className={s.header}>
+    <Container className={s.header__inner}>
+      <div className={s.header__logo}>
+        <img src={logo} alt={siteTitle} />
+      </div>
+      <Menu />
+    </Container>
+  </header>
 )
 
 Header.defaultProps = {

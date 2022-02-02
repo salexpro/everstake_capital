@@ -9,14 +9,14 @@ import * as s from './style.module.scss'
 
 const Footer = ({ siteTitle }) => {
   return (
-    <Container as="footer" className={s.footer}>
+    <Container id="contact" as="footer" className={s.footer}>
       <span className={s.footer__copy}>
         © All Rights Reserved, {new Date().getFullYear()}.
       </span>
       <div className={s.footer__logo}>
         <img src={logo} alt={siteTitle} />
       </div>
-      <ul>
+      <ul className={s.footer__menu}>
         <li>
           <a href="#">Terms of use</a>
         </li>

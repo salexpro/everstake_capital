@@ -1,10 +1,6 @@
 const MENU = [
   {
-    name: 'About',
-    link: '#about',
-  },
-  {
-    name: 'Why',
+    name: 'Why Us',
     link: '#why',
   },
   {

@@ -1,0 +1,69 @@
+@import '~styles/mixins';
+
+.section {
+  padding-top: 220px;
+  padding-bottom: 120px;
+  background: $gray-1000;
+}
+
+.cloud {
+  padding-bottom: 204px;
+}
+
+.sign {
+  position: relative;
+  z-index: 1;
+  font-size: 80px;
+  line-height: 1.075;
+  text-align: center;
+  margin: 0;
+}
+
+.tag {
+  user-select: none;
+  position: absolute;
+  &__defi {
+    width: 137px;
+    top: -17px;
+    left: 49px;
+  }
+  &__play2earn {
+    width: 192px;
+    top: -58px;
+    left: 336px;
+    z-index: -1;
+  }
+  &__nft {
+    width: 109px;
+    top: -43px;
+    right: 450px;
+    z-index: -1;
+  }
+  &__gamefi {
+    width: 138px;
+    top: -36px;
+    right: 92px;
+  }
+  &__oracles {
+    width: 210px;
+    bottom: -77px;
+    left: 150px;
+  }
+  &__crosschain {
+    width: 172px;
+    bottom: -45px;
+    left: 480px;
+  }
+  &__web3 {
+    width: 157px;
+    bottom: -72px;
+    right: 170px;
+  }
+}
+
+.carousel {
+  user-select: none;
+  &__item {
+    margin: 0 30px;
+  }
+}

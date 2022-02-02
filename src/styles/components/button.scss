@@ -6,3 +6,17 @@ button {
   border: 0;
   padding: 0;
 }
+
+.btn {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  column-gap: 20px;
+  width: 100%;
+  max-width: 240px;
+  box-shadow: 4px 4px 0px 0px #ffffff4d;
+  &:hover,
+  &:focus {
+    background-color: $blue-500;
+  }
+}

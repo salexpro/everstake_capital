@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Button } from 'react-bootstrap'
+import { Container, Button } from 'react-bootstrap'
+import { sortBy } from 'lodash'
 
 import Icon from '../Icon'
 
@@ -13,7 +14,12 @@ const Hero = () => {
     allFile: { nodes: partners },
   } = useStaticQuery(graphql`
     {
-      allFile(filter: { relativeDirectory: { eq: "partners" } }) {
+      allFile(
+        filter: {
+          relativeDirectory: { eq: "partners" }
+          name: { nin: ["casper", "arbitrum", "optimism"] }
+        }
+      ) {
         nodes {
           name
           publicURL
@@ -22,8 +28,12 @@ const Hero = () => {
     }
   `)
 
+  const ORDER = ['solana', 'terra', 'cosmos', 'polygon', 'ethereum', 'polkadot']
+
+  const sortedPartners = sortBy(partners, ({ name }) => ORDER.indexOf(name))
+
   return (
-    <section className={s.hero}>
+    <Container as="section" className={s.hero}>
       <div className={s.hero__content}>
         <h1>Money is cheap, expertise is priceless. We bridge the gap.</h1>
         <p className="lead">
@@ -34,22 +44,21 @@ const Hero = () => {
           Pitch idea
           <Icon name="bulb" />
         </Button>
+        <div className={s.hero__img} />
       </div>
-      <div className={s.hero__partners}>
-        <div className={s.hero__partners__top}>
-          <p>Invests in projects built on</p>
-          <p>
-            Backed by the biggest staking provider
-            <img src={everstake} alt="Everstake" />
-          </p>
-          <div className={s.herp__partners__bottom}>
-            {partners.map(({ name, publicURL }) => (
-              <img key={name} src={publicURL} alt={name} />
-            ))}
-          </div>
+      <div className={s.partners}>
+        <div className={s.partners__built}>Invests in projects built on</div>
+        <div className={s.partners__provider}>
+          Backed by the biggest staking provider
+          <img src={everstake} alt="Everstake" />
+        </div>
+        <div className={s.partners__items}>
+          {sortedPartners.map(({ name, publicURL }) => (
+            <img key={name} src={publicURL} alt={name} />
+          ))}
         </div>
       </div>
-    </section>
+    </Container>
   )
 }
 

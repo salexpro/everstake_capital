@@ -1,2 +1,55 @@
+@import '~styles/mixins';
+
 .hero {
+  padding-top: 53px;
+  padding-bottom: 90px;
+  &__content {
+    position: relative;
+    margin-bottom: 110px;
+    h1 {
+      max-width: 850px;
+    }
+    :global(.lead) {
+      max-width: 490px;
+      margin-bottom: 42px;
+    }
+  }
+  &__img {
+    position: absolute;
+    top: -15px;
+    right: 0;
+    width: 500px;
+    height: 400px;
+    border: 1px dashed $gray-700;
+    border-radius: 8px;
+  }
+}
+
+.partners {
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  grid-gap: 20px;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    'built provider'
+    'items items';
+  &__built {
+    grid-area: built;
+  }
+  &__provider {
+    grid-area: provider;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    column-gap: 16px;
+    color: $gray-600;
+  }
+  &__items {
+    grid-area: items;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
