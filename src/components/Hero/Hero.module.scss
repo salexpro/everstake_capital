@@ -1,27 +1,72 @@
 @import '~styles/mixins';
 
 .hero {
-  padding-top: 53px;
+  padding-top: 38px;
   padding-bottom: 90px;
+  @include b-d(xl) {
+    padding-top: 27px;
+  }
+  @include b-d(lg) {
+    padding-bottom: 58px;
+  }
+  @include b-d(md) {
+    padding-top: 24px;
+    padding-bottom: 42px;
+  }
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 95px;
+    @include b-d(xl) {
+      flex-direction: column-reverse;
+      margin-bottom: 78px;
+    }
+    @include b-d(lg) {
+      margin-bottom: 54px;
+    }
+    @include b-d(md) {
+      margin-bottom: 42px;
+    }
+  }
   &__content {
     position: relative;
-    margin-bottom: 110px;
-    h1 {
-      max-width: 850px;
+    z-index: 2;
+    @include b-up(xl) {
+      margin-right: -500px;
+    }
+    @include b-d(xl) {
+      margin-top: -78px;
+      text-align: center;
+      display: grid;
+      justify-items: center;
+    }
+    @include b-d(lg) {
+      margin-top: -53px;
+    }
+    @include b-d(md) {
+      margin-top: -78px;
     }
     :global(.lead) {
       max-width: 490px;
       margin-bottom: 42px;
+      @include b-d(lg) {
+        margin-bottom: 30px;
+      }
     }
   }
   &__img {
-    position: absolute;
-    top: -15px;
-    right: 0;
     width: 500px;
     height: 400px;
     border: 1px dashed $gray-700;
     border-radius: 8px;
+    flex: 0 0 auto;
+    z-index: -1;
+    @include b-d(md) {
+      width: 100%;
+      height: 0;
+      padding-bottom: 80%;
+    }
   }
 }
 
@@ -34,22 +79,78 @@
   grid-template-areas:
     'built provider'
     'items items';
+  @include b-d(lg) {
+    grid-gap: 30px;
+  }
+  @include b-d(md) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'built'
+      'items'
+      'provider';
+    justify-items: center;
+    row-gap: 24px;
+    font-size: 13px;
+  }
   &__built {
     grid-area: built;
   }
   &__provider {
     grid-area: provider;
     display: grid;
-    grid-auto-flow: column;
-    align-items: center;
-    column-gap: 16px;
     color: $gray-600;
+    grid-gap: 16px;
+    @include b-up(md) {
+      grid-auto-flow: column;
+      align-items: center;
+    }
+    @include b-d(md) {
+      margin-top: 10px;
+      justify-items: center;
+    }
   }
   &__items {
     grid-area: items;
     display: grid;
-    grid-auto-flow: column;
     justify-content: space-between;
     align-items: center;
+    @include b-btw(lg, xl) {
+      column-gap: 33px;
+      justify-items: center;
+      img:nth-child(2) {
+        height: calc(100% - 4px);
+      }
+    }
+    @include b-up(lg) {
+      grid-auto-flow: column;
+    }
+    @include b-d(lg) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 22px;
+      justify-items: center;
+    }
+    @include b-d(md) {
+      grid-template-columns: repeat(2, auto);
+      justify-items: end;
+    }
+    img {
+      @include b-btw(md, lg) {
+        &:nth-child(3n) {
+          justify-self: end;
+        }
+        &:nth-child(3n + 1) {
+          justify-self: start;
+        }
+      }
+      @include b-d(md) {
+        max-height: 28px;
+        &:first-child {
+          max-height: 20px;
+        }
+        &:nth-child(2n) {
+          justify-self: start;
+        }
+      }
+    }
   }
 }

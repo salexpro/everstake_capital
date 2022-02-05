@@ -4,7 +4,10 @@
   &-fluid {
     margin: auto;
     padding: 0 60px;
-    @include media-breakpoint-down(sm) {
+    @include b-d(lg) {
+      padding: 0 40px;
+    }
+    @include b-d(md) {
       padding: 0 20px;
     }
   }

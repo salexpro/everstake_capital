@@ -45,6 +45,7 @@ const Cloud = () => {
       <Marquee
         className={s.carousel}
         // gradient={false}
+        gradientWidth="25%"
         gradientColor={[19, 23, 25]}
         speed={30}
       >

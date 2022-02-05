@@ -34,16 +34,18 @@ const Hero = () => {
 
   return (
     <Container as="section" className={s.hero}>
-      <div className={s.hero__content}>
-        <h1>Money is cheap, expertise is priceless. We bridge the gap.</h1>
-        <p className="lead">
-          Everstake Capital invests in early-stage blockchain startupsand
-          provide them with technical expertise.
-        </p>
-        <Button>
-          Pitch idea
-          <Icon name="bulb" />
-        </Button>
+      <div className={s.hero__info}>
+        <div className={s.hero__content}>
+          <h1>Money is cheap, expertise is priceless. We bridge the gap.</h1>
+          <p className="lead">
+            Everstake Capital invests in early-stage blockchain startups and
+            provide them with technical expertise.
+          </p>
+          <Button>
+            Pitch idea
+            <Icon name="bulb" />
+          </Button>
+        </div>
         <div className={s.hero__img} />
       </div>
       <div className={s.partners}>

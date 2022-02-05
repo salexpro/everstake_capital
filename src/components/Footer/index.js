@@ -3,7 +3,8 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 
-import logo from './img/logo.svg'
+import logo from '~img/logo_line.svg'
+import logoSm from '~img/logo_square.svg'
 
 import * as s from './style.module.scss'
 
@@ -14,7 +15,10 @@ const Footer = ({ siteTitle }) => {
         © All Rights Reserved, {new Date().getFullYear()}.
       </span>
       <div className={s.footer__logo}>
-        <img src={logo} alt={siteTitle} />
+        <picture>
+          <source srcSet={logoSm} media="(max-width: 639px)" />
+          <img src={logo} alt={siteTitle} />
+        </picture>
       </div>
       <ul className={s.footer__menu}>
         <li>

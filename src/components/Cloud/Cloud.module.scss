@@ -4,10 +4,30 @@
   padding-top: 220px;
   padding-bottom: 120px;
   background: $gray-1000;
+
+  @include b-d(xl) {
+    padding-top: 168px;
+  }
+  @include b-d(lg) {
+    padding-top: 138px;
+    padding-bottom: 84px;
+  }
+  @include b-d(md) {
+    padding-top: 127px;
+  }
 }
 
 .cloud {
   padding-bottom: 204px;
+  @include b-d(xl) {
+    padding-bottom: 180px;
+  }
+  @include b-d(lg) {
+    padding-bottom: 165px;
+  }
+  @include b-d(md) {
+    padding-bottom: 133px;
+  }
 }
 
 .sign {
@@ -17,6 +37,21 @@
   line-height: 1.075;
   text-align: center;
   margin: 0;
+  @include b-d(xl) {
+    max-width: 905px;
+    margin: auto;
+  }
+  @include b-d(lg) {
+    font-size: 62px;
+    line-height: 1.162;
+  }
+  @include b-d(md) {
+    font-size: 42px;
+    line-height: 1.238;
+  }
+  @include b-d(sm) {
+    max-width: 320px;
+  }
 }
 
 .tag {
@@ -25,45 +60,159 @@
   &__defi {
     width: 137px;
     top: -17px;
-    left: 49px;
+    left: 4%;
+    @include b-d(xl) {
+      width: 142px;
+      top: 40px;
+      left: -11px;
+    }
+    @include b-d(lg) {
+      width: 116px;
+      top: 47px;
+      left: 3.8%;
+    }
+    @include b-d(md) {
+      width: 66px;
+      top: 85px;
+      left: -13px;
+    }
   }
   &__play2earn {
     width: 192px;
     top: -58px;
-    left: 336px;
+    left: 28%;
     z-index: -1;
+    @include b-d(xl) {
+      width: 200px;
+      left: 170px;
+    }
+    @include b-d(lg) {
+      width: 156px;
+      top: -42px;
+      left: 18%;
+    }
+    @include b-d(md) {
+      width: 120px;
+      top: -22px;
+      left: -4px;
+    }
   }
   &__nft {
     width: 109px;
     top: -43px;
-    right: 450px;
+    right: 37.5%;
     z-index: -1;
+    @include b-d(xl) {
+      width: 115px;
+      top: -34px;
+      right: 300px;
+    }
+    @include b-d(lg) {
+      width: 93px;
+      right: 30.4%;
+    }
+    @include b-d(md) {
+      width: 70px;
+      top: -27px;
+      right: 112px;
+    }
   }
   &__gamefi {
     width: 138px;
     top: -36px;
     right: 92px;
+    @include b-d(xl) {
+      width: 146px;
+      top: -60px;
+      right: 17px;
+    }
+    @include b-d(lg) {
+      width: 105px;
+      top: -42px;
+      right: 1.4%;
+    }
+    @include b-d(md) {
+      width: 88px;
+      top: -23px;
+      right: 2px;
+    }
   }
   &__oracles {
     width: 210px;
     bottom: -77px;
-    left: 150px;
+    left: 12.5%;
+    @include b-d(xl) {
+      width: 216px;
+      bottom: -54px;
+      left: 98px;
+    }
+    @include b-d(lg) {
+      width: 174px;
+      left: 13.6%;
+    }
+    @include b-d(md) {
+      width: 124px;
+      bottom: -42px;
+      left: -14px;
+    }
   }
   &__crosschain {
     width: 172px;
     bottom: -45px;
-    left: 480px;
+    @include b-up(xl) {
+      left: 40%;
+    }
+    @include b-d(xl) {
+      width: 178px;
+      bottom: -53px;
+      right: 266px;
+      z-index: -1;
+    }
+    @include b-d(lg) {
+      width: 151px;
+      bottom: -42px;
+      right: 21.4%;
+    }
+    @include b-d(md) {
+      width: 138px;
+      right: -13px;
+    }
   }
   &__web3 {
     width: 157px;
     bottom: -72px;
-    right: 170px;
+    right: 14%;
+    @include b-d(xl) {
+      width: 163px;
+      bottom: 31px;
+      right: 56px;
+    }
+    @include b-d(lg) {
+      width: 115px;
+      bottom: 61px;
+      right: 6.4%;
+    }
+    @include b-d(md) {
+      width: 89px;
+      bottom: 74px;
+      right: -4px;
+    }
   }
 }
 
 .carousel {
   user-select: none;
+  :global(.overlay) {
+    &::before,
+    &::after {
+      max-width: 200px;
+    }
+  }
   &__item {
     margin: 0 30px;
+    @include b-d(xl) {
+      max-height: 34px;
+      margin: 0 20px;
+    }
   }
 }

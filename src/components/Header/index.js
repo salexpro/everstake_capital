@@ -1,30 +1,45 @@
-import React from 'react'
-import { Container } from 'react-bootstrap'
-import PropTypes from 'prop-types'
+import React, { useState } from 'react'
+import { Container, Offcanvas, Button } from 'react-bootstrap'
+import cn from 'classnames'
 
-import Menu from '~components/Menu'
+import logo from '~img/logo_square.svg'
 
-import logo from './img/logo.svg'
+import Menu from '../Menu'
+import Icon from '../Icon'
 
 import * as s from './style.module.scss'
 
-const Header = ({ siteTitle }) => (
-  <header className={s.header}>
-    <Container className={s.header__inner}>
-      <div className={s.header__logo}>
-        <img src={logo} alt={siteTitle} />
-      </div>
-      <Menu />
-    </Container>
-  </header>
-)
+const Header = ({ siteTitle }) => {
+  const [show, setShow] = useState(false)
 
-Header.defaultProps = {
-  siteTitle: '',
-}
+  const handleMenu = () => setShow((prev) => !prev)
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+  return (
+    <>
+      <header className={s.header}>
+        <Container className={s.header__inner}>
+          <div className={s.header__logo}>
+            <img src={logo} alt={siteTitle} />
+          </div>
+          <Menu variant="header" />
+          <button
+            type="button"
+            onClick={handleMenu}
+            className={cn(s.hamb, { [s.open]: show })}
+          >
+            Open Menu
+          </button>
+        </Container>
+      </header>
+      <Offcanvas show={show} placement="top">
+        <Menu variant="dropdown" onHide={handleMenu} />
+        <Button>
+          Pitch idea
+          <Icon name="bulb" />
+        </Button>
+      </Offcanvas>
+    </>
+  )
 }
 
 export default Header

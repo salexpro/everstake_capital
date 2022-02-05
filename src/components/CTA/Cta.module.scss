@@ -7,6 +7,15 @@
   background-image: url(./img/strips.svg);
   background-repeat: no-repeat;
   background-position: center;
+  @include b-d(lg) {
+    padding-top: 172px;
+    padding-bottom: 148px;
+  }
+  @include b-d(md) {
+    background-size: 1290px;
+    padding-top: 162px;
+    padding-bottom: 138px;
+  }
   &__button {
     display: grid;
     row-gap: 22px;
@@ -21,10 +30,28 @@
     text-align: center;
     border-radius: 100%;
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    @include b-d(lg) {
+      width: 280px;
+      height: 280px;
+      row-gap: 11px;
+      font-size: 28px;
+    }
+    @include b-d(md) {
+      width: 180px;
+      height: 180px;
+      row-gap: 4px;
+      font-size: 18px;
+    }
     &:hover,
     &:focus {
       background-color: $blue-500;
       transform: scale(1.1);
+    }
+    svg {
+      width: 100px;
+      @include b-d(md) {
+        width: 80px;
+      }
     }
   }
 }
