@@ -1,0 +1,60 @@
+.form {
+  max-width: 360px;
+  margin: 54px auto 0;
+  display: grid;
+  grid-gap: 16px;
+  width: 100%;
+  @include b-o(md) {
+    max-width: 320px;
+  }
+  @include b-d(md) {
+    margin-top: 23px;
+  }
+  &-group {
+    position: relative;
+  }
+
+  &-label {
+    text-shadow: 2px 2px 0px rgba($white, 0.4);
+    font-family: $font-family-monospace;
+    max-width: 170px;
+    @media screen and (min-width: 768px) {
+      position: absolute;
+      top: 50%;
+      right: calc(100% + 24px);
+      transform: translateY(-50%);
+      width: 100%;
+      text-align: right;
+    }
+  }
+  &-control {
+    box-shadow: inset 0 -1px $gray-800;
+    resize: vertical;
+    max-height: 360px;
+    border-radius: 0;
+  }
+  .btn {
+    margin-top: 32px;
+    @include b-d(md) {
+      margin-top: 16px;
+    }
+  }
+}
+
+.was-validated .form-control:invalid,
+.form-control.is-invalid {
+  box-shadow: inset 0 -1px $form-feedback-invalid-color;
+  &:focus {
+    box-shadow: inset 0 -2px $form-feedback-invalid-color;
+  }
+  + .form-label {
+    color: $form-feedback-invalid-color;
+  }
+}
+.was-validated .form-control:valid,
+.form-control.is-valid {
+  box-shadow: inset 0 -1px $form-feedback-valid-color;
+  &:focus {
+    box-shadow: inset 0 -2px $form-feedback-valid-color;
+  }
+}

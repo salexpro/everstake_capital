@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 import { Container, Button } from 'react-bootstrap'
 import { sortBy } from 'lodash'
 
@@ -41,7 +41,7 @@ const Hero = () => {
             Everstake Capital invests in early-stage blockchain startups and
             provide them with technical expertise.
           </p>
-          <Button>
+          <Button as={Link} to="/contact">
             Pitch idea
             <Icon name="bulb" />
           </Button>

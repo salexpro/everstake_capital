@@ -26,13 +26,13 @@ const Menu = ({ variant, onHide }) => {
       {MENU.map(({ name, link }) => (
         <Nav.Item as="li" key={name}>
           {isHomepage ? (
-            <Nav.Link href={`${link}`} onClick={(e) => handleScroll(e, link)}>
+            <Nav.Link href={link} onClick={(e) => handleScroll(e, link)}>
               {name}
             </Nav.Link>
           ) : (
-            <Link to={`/${link}`} className="nav-link" activeClassName="active">
+            <Nav.Link as={Link} to={`/${link}`} activeClassName="active">
               {name}
-            </Link>
+            </Nav.Link>
           )}
         </Nav.Item>
       ))}

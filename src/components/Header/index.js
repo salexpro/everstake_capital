@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import { useLocation } from '@reach/router'
+
+import { Link } from 'gatsby'
 import { Container, Offcanvas, Button } from 'react-bootstrap'
 import cn from 'classnames'
 
@@ -14,13 +17,15 @@ const Header = ({ siteTitle }) => {
 
   const handleMenu = () => setShow((prev) => !prev)
 
+  const { pathname } = useLocation()
+
   return (
     <>
       <header className={s.header}>
         <Container className={s.header__inner}>
-          <div className={s.header__logo}>
+          <Link to="/" className={s.header__logo}>
             <img src={logo} alt={siteTitle} />
-          </div>
+          </Link>
           <Menu variant="header" />
           <button
             type="button"
@@ -33,7 +38,11 @@ const Header = ({ siteTitle }) => {
       </header>
       <Offcanvas show={show} placement="top">
         <Menu variant="dropdown" onHide={handleMenu} />
-        <Button>
+        <Button
+          as={Link}
+          to="/contact"
+          style={{ visibility: pathname !== '/' && 'hidden' }}
+        >
           Pitch idea
           <Icon name="bulb" />
         </Button>

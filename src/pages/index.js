@@ -21,7 +21,7 @@ const IndexPage = () => (
           'We have been running nodes and RPCs, developing smart contracts, and building blockchain products from scratch since 2018. On top of that, we train Rust, GO, and Solidity developers.',
         button: {
           label: 'Speak with us',
-          link: '#',
+          link: '/contact',
           icon: 'chat',
         },
       }}
@@ -33,7 +33,7 @@ const IndexPage = () => (
           "It's hard to build something innovative from scratch alone. We developed dozens of products like Metaplex, Everlend, Astroport, and offer you our best practices.",
         button: {
           label: 'Get things done',
-          link: '#',
+          link: '/contact',
           icon: 'check',
         },
       }}
@@ -45,7 +45,7 @@ const IndexPage = () => (
           'Everstake Capital helps transform your vision into a product  and always respects your decisions.',
         button: {
           label: 'Pitch idea',
-          link: '#',
+          link: '/contact',
           icon: 'bulb',
         },
       }}

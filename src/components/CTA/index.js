@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'gatsby'
 // import Icon from '../Icon'
 // import Strips from './Strips'
 
@@ -8,7 +8,7 @@ import * as s from './Cta.module.scss'
 const CTA = () => {
   return (
     <section className={s.cta}>
-      <button type="button" className={s.cta__button}>
+      <Link to="/contact" type="button" className={s.cta__button}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 100 100"
@@ -34,7 +34,7 @@ const CTA = () => {
           <path d="M4 48h16v4H4zm76 0h16v4H80zM48 20V4h4v16zm23 6 11-11 3 3-11 11zm-46 3L14 18l3-3 11 12z" />
         </svg>
         Pitch idea
-      </button>
+      </Link>
       {/* <Strips /> */}
     </section>
   )

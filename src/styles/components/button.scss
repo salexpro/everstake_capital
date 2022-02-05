@@ -16,6 +16,9 @@ button {
   max-width: 240px;
   box-shadow: 4px 4px 0px 0px #ffffff4d;
   white-space: nowrap;
+  &[type='submit'] {
+    max-width: 100%;
+  }
   &:hover,
   &:focus {
     background-color: $blue-500;

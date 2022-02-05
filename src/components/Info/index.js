@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import { Container, Button } from 'react-bootstrap'
 
 import Icon from '../Icon'
@@ -12,7 +13,7 @@ const Info = ({ data, id }) => {
       <div className={s.info__content}>
         <h2>{header}</h2>
         <p>{descr}</p>
-        <Button as="a" href={button?.link}>
+        <Button as={Link} to={button?.link}>
           {button?.label}
           <Icon name={button?.icon} />
         </Button>
