@@ -13,14 +13,20 @@ button {
   justify-content: space-between;
   column-gap: 20px;
   width: 100%;
-  max-width: 240px;
-  box-shadow: 4px 4px 0px 0px #ffffff4d;
   white-space: nowrap;
   &[type='submit'] {
     max-width: 100%;
   }
-  &:hover,
-  &:focus {
-    background-color: $blue-500;
+  &-primary {
+    box-shadow: 4px 4px 0px 0px #ffffff4d;
+    max-width: 240px;
+    &:hover,
+    &:focus {
+      background-color: $blue-500;
+    }
+  }
+  &-dark {
+    box-shadow: 4px 4px 0px 0px #ffffff1a;
+    justify-content: center;
   }
 }

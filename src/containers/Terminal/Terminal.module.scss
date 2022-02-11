@@ -1,0 +1,163 @@
+@import '~styles/mixins';
+
+.wrap {
+  outline: none;
+  height: 100%;
+}
+
+.logo {
+  @include b-d(lg) {
+    max-width: 400px;
+  }
+  @include b-d(md) {
+    max-width: 240px;
+  }
+}
+
+.content {
+  position: relative;
+  display: grid;
+  min-height: 100%;
+  grid-template-rows: auto 1fr;
+  padding-top: 100px;
+  padding-bottom: 75px;
+  @include b-d(lg) {
+    padding-top: 80px;
+  }
+  @include b-d(md) {
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+}
+
+.terminal {
+  margin-top: 100px;
+  font-size: 18px;
+  @include b-d(lg) {
+    margin-top: 80px;
+  }
+  @include b-d(md) {
+    margin-top: 42px;
+    font-size: 16px;
+  }
+  div,
+  input {
+    white-space: pre-line;
+    font-family: $font-family-monospace;
+    &:global(.terminalContainer) {
+      overflow: hidden;
+    }
+  }
+}
+
+.render {
+  display: grid;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  grid-gap: 24px;
+}
+
+.portfolio {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  &__item {
+    & + & {
+      margin-top: 48px;
+      @include b-d(md) {
+        tr {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-gap: 24px;
+          + tr {
+            margin-top: 24px;
+          }
+        }
+        td {
+          padding: 0;
+        }
+      }
+    }
+  }
+  &__header {
+    color: #9999ff;
+    margin-bottom: 24px;
+  }
+  &__descr {
+    color: #c2c9cf;
+    margin-bottom: 24px;
+  }
+  &__tables {
+    display: grid;
+    column-gap: 115px;
+    justify-content: start;
+    justify-items: start;
+    row-gap: 24px;
+    @include b-up(lg) {
+      grid-auto-flow: column;
+    }
+    table {
+      width: 100%;
+    }
+    th {
+      text-align: center;
+      color: #c2c9cf;
+      padding-bottom: 24px;
+    }
+    tr + tr {
+      td {
+        padding-top: 24px;
+      }
+    }
+    td {
+      padding: 0;
+      + td {
+        padding-left: 24px;
+      }
+    }
+    a {
+      text-decoration: underline;
+      &::after {
+        content: '->';
+      }
+    }
+  }
+}
+
+.controls {
+  position: absolute;
+  right: 60px;
+  bottom: 60px;
+  z-index: 2;
+  display: grid;
+  grid-gap: 24px;
+  margin-top: 40px;
+  align-self: end;
+  @include b-up(lg) {
+    grid-auto-flow: column;
+  }
+  @include b-d(lg) {
+    right: 40px;
+    bottom: 40px;
+  }
+  @include b-d(md) {
+    position: static;
+    grid-gap: 12px;
+  }
+  &:not(.open) {
+    justify-content: end;
+  }
+  &.open {
+    position: static;
+    grid-auto-columns: 1fr;
+    @include b-up(lg) {
+      margin-bottom: -15px;
+    }
+    @include b-btw(md, lg) {
+      margin-bottom: -35px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include b-d(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
