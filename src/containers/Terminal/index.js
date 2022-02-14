@@ -1,6 +1,9 @@
-/* eslint-disable react/no-array-index-key */
+/* eslint-disable jsx-a11y/no-autofocus, react/no-array-index-key */
 import React, { useState, useEffect } from 'react'
-import { Container, Button } from 'react-bootstrap'
+import { Container, Button, Form } from 'react-bootstrap'
+import { useForm as useFormSpree } from '@formspree/react'
+import { useForm } from 'react-hook-form'
+
 import {
   ReactTerminalStateless,
   ReactOutputRenderers,
@@ -25,6 +28,7 @@ import * as s from './Terminal.module.scss'
 
 const RENDERER_DEFAULT = 'default'
 const RENDERER_PORTFOLIO = 'portfolio'
+const RENDERER_CONTACT = 'contact'
 
 const defaultCustomRenderer = ({ content }) => (
   <div className={s.render}>
@@ -78,6 +82,184 @@ const portfolioRenderer = ({ content }) => (
   </div>
 )
 
+// contact from renderer changes terminal state
+const contactRenderer = ({
+  content: {
+    data: { header, form },
+    setContact,
+  },
+}) => {
+  // console.log(setContact)
+  const [step, setStep] = useState(0)
+
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+    reset,
+  } = useForm({
+    shouldUseNativeValidation: false,
+  })
+
+  const [formState, handleForm] = useFormSpree('moqrepyk')
+
+  const { errors: fsErrors, submitting, succeeded } = formState
+
+  const onSubmit = (data, event) => {
+    console.log('submitted', data, event)
+    if (step < 4) {
+      setStep((prev) => prev + 1)
+    }
+    if (step === 5) {
+      handleForm(event).then(({ body }) => {
+        window.scrollTo(0, document.body.scrollHeight)
+        setContact(false)
+        if (body.error) {
+          console.error(body)
+        }
+      })
+    }
+  }
+
+  const handleAction = (e) => {
+    if (e.code === 'Tab' || e.key === 'Tab') {
+      e.preventDefault()
+    }
+    const { value } = e.target
+
+    const val = value.toLowerCase()
+
+    console.log(val)
+
+    if (e.code === 'Enter' || e.key === 'Enter') {
+      if (val !== 'yes') e.preventDefault()
+      // eslint-disable-next-line default-case
+      switch (val) {
+        case 'yes':
+          setStep(5)
+          break
+        case 'edit':
+          setStep(0)
+          break
+        case 'no':
+          setStep(6)
+          setContact(false)
+          break
+      }
+    }
+  }
+
+  useEffect(() => {
+    if (step < 4) {
+      setContact(true)
+      document.querySelector('.terminalOutput input').focus()
+
+      if (step === 2)
+        reset({
+          keepValues: true,
+        })
+    }
+    window.scrollTo(0, document.body.scrollHeight)
+
+    console.log(step)
+  }, [step])
+
+  return (
+    <>
+      <form
+        className={s.form}
+        // validated={validated}
+        // onSubmit={handleForm}
+        id="contactForm"
+        onSubmit={handleSubmit(onSubmit)}
+        noValidate
+      >
+        <div className={s.form__header}>
+          <span>{header}</span>
+        </div>
+        {form.map(
+          ({ label, name, type, pattern }, i) =>
+            i <= step && (
+              <div key={name} className={s.form__item}>
+                <div className={s.form__item__content}>
+                  <span>{label}:</span>&nbsp;
+                  <Form.Control
+                    id={`cnt${name}`}
+                    as={step === i ? 'input' : 'textarea'}
+                    type={type}
+                    readOnly={step !== i}
+                    name={name}
+                    required
+                    autoFocus
+                    autoComplete="off"
+                    aria-invalid="false"
+                    aria-haspopup="false"
+                    spellCheck="false"
+                    bsPrefix={s.form__input}
+                    {...register(name, {
+                      required: true,
+                      pattern,
+                    })}
+                    className={cn({
+                      [s.invalid]: errors?.[name],
+                    })}
+                  />
+                </div>
+              </div>
+            )
+        )}
+        {step >= 3 && (
+          <div className={s.form__footer}>
+            <span>
+              <span />
+            </span>
+            <span>
+              <span />
+            </span>
+          </div>
+        )}
+      </form>
+      {step >= 4 && (
+        <>
+          Send? Yes/No/Edit
+          <br />
+          <br />${' '}
+          <input
+            className={s.form__input}
+            type="text"
+            onKeyDown={handleAction}
+            form="contactForm"
+            autoFocus
+            readOnly={step !== 4}
+          />
+        </>
+      )}
+
+      {submitting && <span className={s.loader} />}
+      {succeeded || fsErrors.length ? (
+        <>
+          <br />
+          <br />
+          === === === === === === === === ===
+          <br />
+          {succeeded && "Thank you! We'll contact you soon."}
+          {fsErrors.length && (
+            <span style={{ color: '#fa5252' }}>
+              An error occured: {fsErrors?.[0]?.message}
+            </span>
+          )}
+          <br />
+          === === === === === === === === ===
+          <br />
+          <br />
+        </>
+      ) : (
+        ''
+      )}
+    </>
+  )
+}
+
 const isTouchDevice = () => {
   return typeof window !== 'undefined'
     ? window.ontouchstart !== undefined
@@ -87,8 +269,11 @@ const isTouchDevice = () => {
 const Terminal = ({ openWebsite }) => {
   const [isSpacebar, setSpacebar] = useState(true)
 
+  const [isContact, setContact] = useState(null)
+
   const [controls, setControls] = useState(null)
 
+  // Initial Terminal state
   const [state, setState] = useState({
     emulator: new Emulator(),
     emulatorState: EmulatorState.create({
@@ -140,6 +325,20 @@ const Terminal = ({ openWebsite }) => {
           },
           optDef: {},
         },
+        contact: {
+          function: () => {
+            return {
+              output: new OutputFactory.OutputRecord({
+                type: RENDERER_CONTACT,
+                content: {
+                  data: COMMAND_OUTPUTS.CONTACT,
+                  setContact,
+                },
+              }),
+            }
+          },
+          optDef: {},
+        },
         gui: {
           function: () => {
             openWebsite()
@@ -149,6 +348,7 @@ const Terminal = ({ openWebsite }) => {
         },
       }),
     }),
+    acceptInput: true,
   })
 
   useEffect(() => {
@@ -217,13 +417,20 @@ const Terminal = ({ openWebsite }) => {
         <img className={s.logo} src={logo} alt="Everstake Capital" />
         <div className={s.terminal}>
           <ReactTerminalStateless
-            clickToFocus
+            acceptInput={!isContact}
+            clickToFocus={!isContact}
             autoFocus={!isTouchDevice()}
             emulatorState={state.emulatorState}
             inputStr={state.inputStr}
-            onInputChange={(inputStr) => setState({ ...state, inputStr })}
+            onInputChange={(inputStr) =>
+              setState({ ...state, inputStr: inputStr.toLowerCase() })
+            }
             onStateChange={(emulatorState) => {
-              setState({ emulator: state.emulator, emulatorState })
+              setState({
+                emulator: state.emulator,
+                emulatorState,
+                acceptInput: state.acceptInput,
+              })
 
               if (
                 document.querySelector('.terminalInput input').value === 'gui'
@@ -239,6 +446,7 @@ const Terminal = ({ openWebsite }) => {
               ...ReactOutputRenderers,
               [RENDERER_DEFAULT]: defaultCustomRenderer,
               [RENDERER_PORTFOLIO]: portfolioRenderer,
+              [RENDERER_CONTACT]: contactRenderer,
             }}
             theme={{
               background: '#000005',
@@ -266,6 +474,7 @@ const Terminal = ({ openWebsite }) => {
                   key={cmd}
                   variant="dark"
                   onClick={(e) => handleCommand(e, cmd.toLowerCase())}
+                  disabled={isContact}
                 >
                   {cmd}
                 </Button>

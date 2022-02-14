@@ -144,6 +144,32 @@ const COMMAND_OUTPUTS = {
       ],
     },
   ],
+  CONTACT: {
+    header: 'Contact form',
+    form: [
+      {
+        label: 'Name',
+        type: 'text',
+        name: 'name',
+      },
+      {
+        label: 'Project website or other links',
+        type: 'text',
+        name: 'links',
+      },
+      {
+        label: 'Email',
+        type: 'email',
+        name: 'email',
+        pattern: /^[A-Z0-9._'%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+      },
+      {
+        label: 'Telegram',
+        type: 'text',
+        name: 'telegram',
+      },
+    ],
+  },
 }
 
 export { COMMAND_LIST, COMMAND_OUTPUTS }
