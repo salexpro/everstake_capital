@@ -1,5 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
 import { Container, Button } from 'react-bootstrap'
 import { sortBy } from 'lodash'
 
@@ -46,7 +47,14 @@ const Hero = () => {
             <Icon name="bulb" />
           </Button>
         </div>
-        <div className={s.hero__img} />
+        <div className={s.hero__img}>
+          <StaticImage
+            src="./img/hero.png"
+            width={500}
+            quality={100}
+            placeholder="none"
+          />
+        </div>
       </div>
       <div className={s.partners}>
         <div className={s.partners__built}>Invests in projects built on</div>
