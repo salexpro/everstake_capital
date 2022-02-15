@@ -58,6 +58,9 @@
   &__img {
     flex: 0 0 auto;
     z-index: -1;
+    @include b-d(xl) {
+      transform: translateX(-14%);
+    }
   }
 }
 

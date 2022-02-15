@@ -106,7 +106,6 @@ const contactRenderer = ({
   const { errors: fsErrors, submitting, succeeded } = formState
 
   const onSubmit = (data, event) => {
-    console.log('submitted', data, event)
     if (step < 4) {
       setStep((prev) => prev + 1)
     }
@@ -128,8 +127,6 @@ const contactRenderer = ({
     const { value } = e.target
 
     const val = value.toLowerCase()
-
-    console.log(val)
 
     if (e.code === 'Enter' || e.key === 'Enter') {
       if (val !== 'yes') e.preventDefault()
@@ -160,8 +157,6 @@ const contactRenderer = ({
         })
     }
     window.scrollTo(0, document.body.scrollHeight)
-
-    console.log(step)
   }, [step])
 
   return (
@@ -474,7 +469,7 @@ const Terminal = ({ openWebsite }) => {
                   key={cmd}
                   variant="dark"
                   onClick={(e) => handleCommand(e, cmd.toLowerCase())}
-                  disabled={isContact}
+                  disabled={cmd !== 'GUI' && isContact}
                 >
                   {cmd}
                 </Button>

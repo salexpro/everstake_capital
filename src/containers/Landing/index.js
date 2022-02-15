@@ -18,12 +18,7 @@ const Landing = () => {
           node {
             image {
               childImageSharp {
-                gatsbyImageData(
-                  width: 500
-                  quality: 100
-                  formats: AUTO
-                  placeholder: NONE
-                )
+                gatsbyImageData(width: 500, quality: 100, placeholder: NONE)
               }
             }
             header
