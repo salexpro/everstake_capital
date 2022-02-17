@@ -1,6 +1,6 @@
 [
   {
-    "header": "We speak </programming> language",
+    "header": "We speak </> language",
     "descr": "We have been running nodes and RPCs, developing smart contracts, and building blockchain products from scratch since 2018. On top of that, we train Rust, GO, and Solidity developers.",
     "button": {
       "label": "Speak with us",

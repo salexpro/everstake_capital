@@ -48,3 +48,25 @@
     flex: 0 0 auto;
   }
 }
+
+.anim {
+  position: relative;
+  display: inline-block;
+  width: 0.59em * 13;
+  vertical-align: top;
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    &:not(:first-child) {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    &:last-child {
+      @include b-d(md) {
+        left: 50%;
+        transform: translate(-50%, 30px);
+      }
+    }
+  }
+}
