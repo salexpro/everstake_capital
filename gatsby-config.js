@@ -1,3 +1,5 @@
+const rnd = () => Math.random().toString(36).substr(2, 1)
+
 module.exports = {
   /*
   Experimental flags that increase DX and build times with different technics (may require to use `yarn clean` time to time)
@@ -16,7 +18,14 @@ module.exports = {
     `gatsby-plugin-webpack-bundle-analyser-v2`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
-    `gatsby-plugin-minify-classnames`,
+    {
+      resolve: `gatsby-plugin-minify-classnames`,
+      options: {
+        enable: process.env.GATSBY_VERCEL_ENV === 'production',
+        prefix: rnd(),
+        suffix: rnd(),
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
