@@ -38,7 +38,8 @@ const Landing = () => {
     <Layout>
       <Hero />
       {info.map(({ node }, i) => (
-        <Info id={!i && 'why'} data={node} />
+        // eslint-disable-next-line react/no-array-index-key
+        <Info key={`i${i}`} id={!i && 'why'} data={node} />
       ))}
       <Cloud />
       <Partners />

@@ -21,6 +21,7 @@
   grid-template-rows: auto 1fr;
   padding-top: 100px;
   padding-bottom: 75px;
+  max-width: 1440px;
   @include b-d(lg) {
     padding-top: 80px;
   }

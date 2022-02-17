@@ -53,6 +53,7 @@ const Hero = () => {
             width={500}
             quality={100}
             placeholder="none"
+            alt="Illustration"
           />
         </div>
       </div>

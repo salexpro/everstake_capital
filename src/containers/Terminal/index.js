@@ -19,6 +19,7 @@ import {
 import cn from 'classnames'
 
 import Icon from '~components/Icon'
+import Loader from './Loader'
 
 import logo from './img/logo.svg'
 
@@ -262,6 +263,8 @@ const isTouchDevice = () => {
 }
 
 const Terminal = ({ openWebsite }) => {
+  const [loading, setLoading] = useState(true)
+
   const [isSpacebar, setSpacebar] = useState(true)
 
   const [isContact, setContact] = useState(null)
@@ -346,33 +349,6 @@ const Terminal = ({ openWebsite }) => {
     acceptInput: true,
   })
 
-  useEffect(() => {
-    const lines = [
-      'EVERSTAKE CAPITAL DOS V.1.0',
-      '=== === === === === === ===',
-      '',
-      'Press SPACEBAR to launch the website or type HELP to list all available commands in terminal',
-      '',
-    ]
-
-    lines.reduce((acc, l, i) => {
-      const output = `${acc}${l}\n`
-
-      setTimeout(() => {
-        const defaultOutputs = state.emulatorState.getOutputs()
-        const newOutputs = Outputs.addRecord(
-          defaultOutputs,
-          OutputFactory.makeTextOutput(output)
-        )
-        setState({
-          ...state,
-          emulatorState: state.emulatorState.setOutputs(newOutputs),
-        })
-      }, (i + 1) * 150)
-      return output
-    }, '')
-  }, [])
-
   const handleSpace = (e) => {
     if ((e.code === 'Space' || e.key === ' ') && isSpacebar) {
       e.preventDefault()
@@ -405,7 +381,40 @@ const Terminal = ({ openWebsite }) => {
     }
   }
 
-  return (
+  const handleLoading = () => setLoading(false)
+
+  useEffect(() => {
+    if (!loading) {
+      const lines = [
+        'EVERSTAKE CAPITAL DOS V.1.0',
+        '=== === === === === === ===',
+        '',
+        'Press SPACEBAR to launch the website or type HELP to list all available commands in terminal',
+        '',
+      ]
+
+      lines.reduce((acc, l, i) => {
+        const output = `${acc}${l}\n`
+
+        setTimeout(() => {
+          const defaultOutputs = state.emulatorState.getOutputs()
+          const newOutputs = Outputs.addRecord(
+            defaultOutputs,
+            OutputFactory.makeTextOutput(output)
+          )
+          setState({
+            ...state,
+            emulatorState: state.emulatorState.setOutputs(newOutputs),
+          })
+        }, (i + 1) * 150)
+        return output
+      }, '')
+    }
+  }, [loading])
+
+  return loading ? (
+    <Loader handleLoading={handleLoading} />
+  ) : (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-tabindex
     <div className={s.wrap} tabIndex="0" onKeyDown={handleSpace}>
       <Container className={s.content}>

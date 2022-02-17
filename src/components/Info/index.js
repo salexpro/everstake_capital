@@ -10,7 +10,7 @@ import * as s from './Info.module.scss'
 const Info = ({ data, id }) => {
   const { header, descr, button, image } = data
   return (
-    <Container id={id} as="section" className={s.info}>
+    <Container id={id || null} as="section" className={s.info}>
       <div className={s.info__content}>
         <h2>{header}</h2>
         <p>{descr}</p>
