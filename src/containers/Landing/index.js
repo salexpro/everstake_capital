@@ -3,7 +3,6 @@ import { useStaticQuery, graphql } from 'gatsby'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 
-import Layout from '~components/Layout'
 import Hero from '~components/Hero'
 import Info from '~components/Info'
 import Cloud from '~components/Cloud'
@@ -80,19 +79,19 @@ const Landing = () => {
   }, [])
 
   return (
-    <Layout>
+    <>
       <Hero />
       <div id="why" className={s.infos}>
         {info.map(({ node }, i) => (
           // eslint-disable-next-line react/no-array-index-key
-          <Info key={`i${i}`} id={`why${i}`} data={node} />
+          <Info key={`info${i}`} id={`why${i}`} data={node} />
         ))}
       </div>
 
       <Cloud />
       <Partners />
       <CTA />
-    </Layout>
+    </>
   )
 }
 

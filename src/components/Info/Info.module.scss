@@ -66,6 +66,9 @@
   display: inline-block;
   width: 0.59em * 13;
   vertical-align: top;
+  @include b-up(md) {
+    margin-left: 0.6em;
+  }
   span {
     position: absolute;
     top: 0;

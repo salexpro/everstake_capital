@@ -8,14 +8,13 @@ module.exports = {
   // flags: {
   //   FAST_DEV: true,
   // },
+  trailingSlash: 'never',
   siteMetadata: {
     title: `Everstake Capital`,
     description: `Money is cheap, expertise is priceless. We bridge the gap.`,
     domain: process.env.GATSBY_VERCEL_URL || 'everstake.salex.pro',
   },
   plugins: [
-    // https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/
-    `gatsby-plugin-webpack-bundle-analyser-v2`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
@@ -50,7 +49,6 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-remove-trailing-slashes`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

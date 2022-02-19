@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import S from '../components/seo'
 
+import Layout from '../components/Layout'
 import Landing from '../containers/Landing'
 import Terminal from '../containers/Terminal'
 
@@ -9,7 +10,7 @@ const IndexPage = () => {
   const [landing, setLanding] = useState(
     typeof sessionStorage !== 'undefined'
       ? sessionStorage?.getItem('landing')
-      : true
+      : false
   )
 
   const handleLanding = () => {
@@ -18,10 +19,10 @@ const IndexPage = () => {
   }
 
   return (
-    <>
+    <Layout isTerminal={!landing}>
       <S />
       {landing ? <Landing /> : <Terminal openWebsite={handleLanding} />}
-    </>
+    </Layout>
   )
 }
 

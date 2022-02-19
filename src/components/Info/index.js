@@ -17,7 +17,7 @@ const Info = ({ data, id }) => {
 
   const itemHeader = header.includes(symbol) ? (
     <>
-      {header.substr(0, header.indexOf(symbol))}
+      {header.substr(0, header.indexOf(symbol) - 1)}
       <span className={s.anim}>
         {buzzwords.map((w) => (
           <span id={w} key={w}>{`</${w}>`}</span>
