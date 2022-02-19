@@ -46,6 +46,8 @@
     }
   }
   &__img {
+    opacity: 0;
+    transform: translateX(20px);
     @include b-up(xl) {
       position: absolute;
       top: 125px;
