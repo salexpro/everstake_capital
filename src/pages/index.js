@@ -6,9 +6,12 @@ import Landing from '../containers/Landing'
 import Terminal from '../containers/Terminal'
 
 const IndexPage = () => {
-  const [landing, setLanding] = useState(null)
+  const [landing, setLanding] = useState(sessionStorage?.getItem('landing'))
 
-  const handleLanding = () => setLanding(true)
+  const handleLanding = () => {
+    sessionStorage.setItem('landing', true)
+    setLanding(true)
+  }
 
   return (
     <>

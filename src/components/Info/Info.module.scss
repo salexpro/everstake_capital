@@ -1,20 +1,32 @@
 @import '~styles/mixins';
 
 .info {
-  padding-top: 48px;
-  padding-bottom: 48px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  // padding-top: 48px;
+  // padding-bottom: 48px;
+  padding-top: 28px;
+  padding-bottom: 96px;
+  &:not(:first-child) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+  }
   @include b-d(xl) {
     flex-direction: column-reverse;
     align-items: center;
   }
-  &:nth-child(-n + 2) {
-    padding-top: 28px;
-  }
+  // &:nth-child(-n + 2) {
+  // padding-top: 28px;
+  // }
   & + & + & {
-    padding-bottom: 96px;
+    // padding-bottom: 96px;
     @include b-up(xl) {
       h2 {
         white-space: nowrap;
@@ -32,7 +44,7 @@
       max-width: 904px;
     }
     @include b-d(lg) {
-      margin-top: -36px;
+      margin-top: -20px;
     }
     p {
       margin-bottom: 43px;
