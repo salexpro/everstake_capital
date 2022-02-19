@@ -16,6 +16,7 @@ const Partners = () => {
         trigger: '#partners',
         start: '20% center',
         end: '20% center',
+        once: true,
         // markers: true,
         onEnter: () => {
           gsap.to(`.${s.partners__img}`, {

@@ -4,9 +4,7 @@
   padding: 200px 0;
   display: flex;
   justify-content: center;
-  background-image: url(./img/strips.svg);
-  background-repeat: no-repeat;
-  background-position: center;
+  position: relative;
   @include b-d(lg) {
     padding-top: 172px;
     padding-bottom: 148px;

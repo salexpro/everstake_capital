@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'gatsby'
-// import Icon from '../Icon'
-// import Strips from './Strips'
+
+import Strips from './Strips'
 
 import * as s from './Cta.module.scss'
 
 const CTA = () => {
   return (
-    <section className={s.cta}>
+    <section id="cta" className={s.cta}>
       <Link to="/contact" type="button" className={s.cta__button}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,7 @@ const CTA = () => {
         </svg>
         Pitch idea
       </Link>
-      {/* <Strips /> */}
+      <Strips />
     </section>
   )
 }

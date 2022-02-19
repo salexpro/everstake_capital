@@ -36,6 +36,7 @@ const Cloud = () => {
         trigger: '#portfolio',
         start: '15% center',
         end: '15% center',
+        once: true,
         // markers: true,
         onEnter: () => {
           document.querySelectorAll(`.${s.sign} .${s.tag}`).forEach((item) => {
