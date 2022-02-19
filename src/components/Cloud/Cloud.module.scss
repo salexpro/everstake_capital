@@ -57,6 +57,8 @@
 .tag {
   user-select: none;
   position: absolute;
+  opacity: 0;
+  transform: translateY(10px);
   &__defi {
     width: 137px;
     top: -17px;

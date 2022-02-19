@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Container } from 'react-bootstrap'
 import Marquee from 'react-fast-marquee'
 import cn from 'classnames'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+import { random } from 'lodash'
 
 import * as s from './Cloud.module.scss'
 
@@ -26,6 +29,28 @@ const Cloud = () => {
       }
     }
   `)
+
+  useEffect(() => {
+    setTimeout(() => {
+      ScrollTrigger.create({
+        trigger: '#portfolio',
+        start: '15% center',
+        end: '15% center',
+        // markers: true,
+        onEnter: () => {
+          document.querySelectorAll(`.${s.sign} .${s.tag}`).forEach((item) => {
+            gsap.to(item, {
+              autoAlpha: 1,
+              y: 0,
+              ease: 'elastic.out(1, 0.4)',
+              duration: 1.5,
+              delay: random(0.7, true),
+            })
+          })
+        },
+      })
+    }, 1000)
+  }, [])
 
   return (
     <section id="portfolio" className={s.section}>
