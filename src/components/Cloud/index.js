@@ -31,26 +31,24 @@ const Cloud = () => {
   `)
 
   useEffect(() => {
-    setTimeout(() => {
-      ScrollTrigger.create({
-        trigger: '#portfolio',
-        start: '15% center',
-        end: '15% center',
-        once: true,
-        // markers: true,
-        onEnter: () => {
-          document.querySelectorAll(`.${s.sign} .${s.tag}`).forEach((item) => {
-            gsap.to(item, {
-              autoAlpha: 1,
-              y: 0,
-              ease: 'elastic.out(1, 0.4)',
-              duration: 1.5,
-              delay: random(0.7, true),
-            })
+    ScrollTrigger.create({
+      trigger: '#portfolio',
+      start: '15% center',
+      end: '15% center',
+      once: true,
+      // markers: true,
+      onEnter: () => {
+        document.querySelectorAll(`.${s.sign} .${s.tag}`).forEach((item) => {
+          gsap.to(item, {
+            autoAlpha: 1,
+            y: 0,
+            ease: 'elastic.out(1, 0.4)',
+            duration: 1.5,
+            delay: random(0.7, true),
           })
-        },
-      })
-    }, 1000)
+        })
+      },
+    })
   }, [])
 
   return (
@@ -75,7 +73,6 @@ const Cloud = () => {
         gradientColor={[19, 23, 25]}
         speed={30}
       >
-        {' '}
         {partners.map(({ name, publicURL }) => (
           <img
             key={name}
