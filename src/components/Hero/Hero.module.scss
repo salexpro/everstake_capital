@@ -36,16 +36,13 @@
       margin-right: -500px;
     }
     @include b-d(xl) {
-      margin-top: -78px;
+      margin-top: -30px;
       text-align: center;
       display: grid;
       justify-items: center;
     }
-    @include b-d(lg) {
-      margin-top: -53px;
-    }
     @include b-d(md) {
-      margin-top: -23px;
+      margin-top: -20px;
     }
     :global(.lead) {
       max-width: 490px;
@@ -59,7 +56,7 @@
     flex: 0 0 auto;
     z-index: -1;
     @include b-d(xl) {
-      transform: translateX(-14%);
+      transform: translateX(-11%);
     }
   }
 }

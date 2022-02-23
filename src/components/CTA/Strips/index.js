@@ -7,14 +7,14 @@ import * as s from './Strips.module.scss'
 
 gsap.registerPlugin(ScrollTrigger)
 
+const CONTENT = Array(4)
+  .fill('GET IN TOUCH')
+  // eslint-disable-next-line react/no-array-index-key
+  .map((c, i) => <span key={`c${i}`}>{c}</span>)
+
+const ease = 'elastic.out(1.2, 0.3)'
+
 const Strips = () => {
-  const CONTENT = Array(4)
-    .fill('GET IN TOUCH')
-    // eslint-disable-next-line react/no-array-index-key
-    .map((c, i) => <span key={`c${i}`}>{c}</span>)
-
-  const ease = 'elastic.out(1.2, 0.3)'
-
   useEffect(() => {
     ScrollTrigger.create({
       trigger: '#cta',

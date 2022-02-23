@@ -25,7 +25,7 @@ const Footer = ({ siteTitle }) => {
           <a href="#">Terms of use</a>
         </li>
         <li>
-          <a href="#">Privacy police</a>
+          <a href="#">Privacy policy</a>
         </li>
       </ul>
     </Container>
