@@ -5,6 +5,9 @@
   display: flex;
   justify-content: center;
   position: relative;
+  @include b-up(xxl) {
+    padding: 270px 0;
+  }
   @include b-d(lg) {
     padding-top: 172px;
     padding-bottom: 148px;

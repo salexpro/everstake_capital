@@ -24,6 +24,9 @@ h1 {
 
 h2 {
   font-weight: 600;
+  @include b-up(xxl) {
+    margin-bottom: 68px;
+  }
   @include b-d(lg) {
     font-size: 36px;
     line-height: 1.27778;

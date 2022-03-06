@@ -3,8 +3,13 @@
 .partners {
   padding-top: 155px;
   position: relative;
+
   @include b-up(xl) {
     padding-bottom: 74px;
+  }
+  @include b-up(xxl) {
+    padding-top: 254px;
+    padding-bottom: 295px;
   }
   @include b-d(xl) {
     padding-top: 88px;
@@ -20,6 +25,7 @@
   &__header {
     font-size: 80px;
     line-height: 1.075;
+    margin: 0;
     @include b-up(xl) {
       max-width: 560px;
     }
@@ -48,11 +54,17 @@
   &__img {
     opacity: 0;
     transform: translateX(20px);
+
     @include b-up(xl) {
       position: absolute;
       top: 125px;
       right: -132px;
     }
+    @include b-up(xxl) {
+      top: 224px;
+      right: 0;
+    }
+
     @include b-btw(xl, xxl) {
       right: -232px;
     }

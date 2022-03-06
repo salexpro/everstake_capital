@@ -1,9 +1,13 @@
 .container {
   @extend .container-fluid;
-  max-width: 1320px;
+  max-width: 1640px;
   &-fluid {
     margin: auto;
-    padding: 0 60px;
+    padding: 0 120px;
+    @include b-d(xxl) {
+      padding: 0 60px;
+      max-width: 1320px;
+    }
     @include b-d(lg) {
       padding: 0 40px;
     }

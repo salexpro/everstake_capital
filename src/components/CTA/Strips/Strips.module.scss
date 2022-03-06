@@ -15,6 +15,9 @@
     width: 1884px;
     position: absolute;
     top: calc(50% - 53px);
+    @include b-up(xxl) {
+      width: 2000px;
+    }
     @include b-d(md) {
       width: 1316px;
       top: calc(50% - 37px);
@@ -69,5 +72,8 @@
   }
   span {
     margin: 0 30px;
+    @include b-up(xxl) {
+      margin: 0 38px;
+    }
   }
 }

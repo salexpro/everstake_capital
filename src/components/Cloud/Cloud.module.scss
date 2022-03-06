@@ -4,7 +4,10 @@
   padding-top: 220px;
   padding-bottom: 120px;
   background: $gray-1000;
-
+  @include b-up(xxl) {
+    padding-top: 270px;
+    padding-bottom: 140px;
+  }
   @include b-d(xl) {
     padding-top: 168px;
   }
@@ -19,6 +22,9 @@
 
 .cloud {
   padding-bottom: 204px;
+  @include b-up(xxl) {
+    padding-bottom: 274px;
+  }
   @include b-d(xl) {
     padding-bottom: 180px;
   }

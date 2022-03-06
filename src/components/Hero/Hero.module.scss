@@ -3,6 +3,10 @@
 .hero {
   padding-top: 38px;
   padding-bottom: 90px;
+  @include b-up(xxl) {
+    padding-top: 68px;
+    padding-bottom: 60px;
+  }
   @include b-d(xl) {
     padding-top: 27px;
   }
@@ -18,6 +22,9 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 95px;
+    @include b-up(xxl) {
+      margin-bottom: 155px;
+    }
     @include b-d(xl) {
       flex-direction: column-reverse;
       margin-bottom: 78px;

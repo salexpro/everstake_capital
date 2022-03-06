@@ -6,15 +6,24 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @include b-up(xxl) {
+    padding-top: 232px;
+    padding-bottom: 268px;
+    align-items: end;
+  }
   @include b-d(xl) {
     flex-direction: column-reverse;
     align-items: center;
   }
   &:nth-child(-n + 2) {
-    padding-top: 28px;
+    @include b-d(xxl) {
+      padding-top: 28px;
+    }
   }
   & + & + & {
-    padding-bottom: 96px;
+    @include b-d(xxl) {
+      padding-bottom: 96px;
+    }
     @include b-up(xl) {
       h2 {
         white-space: nowrap;
@@ -39,6 +48,9 @@
     }
     p {
       margin-bottom: 43px;
+      @include b-up(xxl) {
+        margin-bottom: 83px;
+      }
       @include b-up(xl) {
         max-width: 530px;
       }
