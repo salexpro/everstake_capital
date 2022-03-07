@@ -63,13 +63,7 @@ const portfolioRenderer = ({ content }) => (
                   {body.map((r, j) => (
                     <tr key={`tr${j}`}>
                       {r.map((d, k) => (
-                        <td key={`td${k}`}>
-                          {typeof d === 'object' ? (
-                            <a href={d.link}>{d.label}</a>
-                          ) : (
-                            d
-                          )}
-                        </td>
+                        <td key={`td${k}`}>{d}</td>
                       ))}
                     </tr>
                   ))}
@@ -239,10 +233,12 @@ const contactRenderer = ({
           === === === === === === === === ===
           <br />
           {succeeded && "Thank you! We'll contact you soon."}
-          {fsErrors.length && (
+          {fsErrors.length ? (
             <span style={{ color: '#fa5252' }}>
               An error occured: {fsErrors?.[0]?.message}
             </span>
+          ) : (
+            ''
           )}
           <br />
           === === === === === === === === ===
@@ -373,11 +369,9 @@ const Terminal = ({ openWebsite }) => {
     setState({ ...state, emulatorState })
 
     if (cmd === 'gui') {
-      window.scrollTo(0, 0)
+      setTimeout(() => window.scrollTo(0, 0), 0)
     } else {
-      setTimeout(() => {
-        window.scrollTo(0, document.body.scrollHeight)
-      }, 0)
+      setTimeout(() => window.scrollTo(0, document.body.scrollHeight), 0)
     }
   }
 

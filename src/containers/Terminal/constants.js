@@ -67,78 +67,10 @@ const COMMAND_OUTPUTS = {
       table: [
         {
           body: [
-            [
-              {
-                label: 'Metaplex',
-                link: '#',
-              },
-              {
-                label: 'Wormhole',
-                link: '#',
-              },
-              {
-                label: 'Celestia',
-                link: '#',
-              },
-              {
-                label: 'Astroport',
-                link: '#',
-              },
-            ],
-            [
-              {
-                label: 'Anchor',
-                link: '#',
-              },
-              {
-                label: 'Pyth',
-                link: '#',
-              },
-              {
-                label: 'Neon',
-                link: '#',
-              },
-              {
-                label: 'Graph',
-                link: '#',
-              },
-            ],
-            [
-              {
-                label: 'Oasis',
-                link: '#',
-              },
-              {
-                label: 'Scale',
-                link: '#',
-              },
-              {
-                label: 'Flow',
-                link: '#',
-              },
-              {
-                label: 'Clover Labs',
-                link: '#',
-              },
-            ],
-            [
-              {
-                label: 'Biconomy',
-                link: '#',
-              },
-              {
-                label: 'Vega',
-                link: '#',
-              },
-              {
-                label: 'HXRO',
-                link: '#',
-              },
-              {
-                label: 'pStake',
-                link: '#',
-              },
-            ],
+            ['Metaplex', 'Wormhole', 'Solana', 'Astroport'],
+            ['Anchor', 'Pyth', 'Neon', 'Graph'],
+            ['Oasis', 'Scale', 'Flow', 'Clover Labs'],
+            ['Biconomy', 'Vega', 'HXRO', 'pStake'],
           ],
         },
       ],

@@ -127,12 +127,6 @@
         padding-left: 1.33em;
       }
     }
-    a {
-      text-decoration: underline;
-      &::after {
-        content: '->';
-      }
-    }
   }
 }
 
