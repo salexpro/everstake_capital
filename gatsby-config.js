@@ -1,4 +1,4 @@
-const rnd = () => Math.random().toString(36).substr(2, 1)
+const rnd = () => Math.random().toString(36).substring(2, 3)
 
 module.exports = {
   /*

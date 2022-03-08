@@ -7,8 +7,8 @@
   align-items: center;
   justify-content: space-between;
   @include b-up(xxl) {
-    padding-top: 232px;
-    padding-bottom: 268px;
+    padding-top: 95px;
+    padding-bottom: 95px;
     align-items: end;
   }
   @include b-d(xl) {
@@ -16,11 +16,17 @@
     align-items: center;
   }
   &:nth-child(-n + 2) {
+    @include b-up(xxl) {
+      padding-top: 172px;
+    }
     @include b-d(xxl) {
       padding-top: 28px;
     }
   }
   & + & + & {
+    @include b-up(xxl) {
+      padding-bottom: 228px;
+    }
     @include b-d(xxl) {
       padding-bottom: 96px;
     }
