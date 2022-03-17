@@ -22,10 +22,12 @@ const Footer = ({ siteTitle }) => {
       </div>
       <ul className={s.footer__menu}>
         <li>
-          <a href="#">Terms of use</a>
+          <a href="https://everstake.capital/terms-and-conditions">
+            Terms of use
+          </a>
         </li>
         <li>
-          <a href="#">Privacy policy</a>
+          <a href="https://everstake.capital/privacy-policy">Privacy policy</a>
         </li>
       </ul>
     </Container>
