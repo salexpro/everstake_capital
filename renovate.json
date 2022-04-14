@@ -3,11 +3,5 @@
   "semanticCommits": "enabled",
   "stabilityDays": 3,
   "prCreation": "not-pending",
-  "labels": ["type: dependencies"],
-  "packageRules": [
-    {
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "automerge": true
-    }
-  ]
+  "labels": ["type: dependencies"]
 }
