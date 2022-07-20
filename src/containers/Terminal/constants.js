@@ -15,7 +15,7 @@ const COMMAND_OUTPUTS = {
       color: '#9999FF',
     },
     {
-      text: 'Everstake Capital invests in early-stage blockchain startups and provide them with technical expertise.',
+      text: 'Everstake Capital invests in early-stage blockchain startups and shares its profound technological expertise with them.',
     },
     {
       text: 'Everstake Capital is backed by the biggest staking provider Everstake.',

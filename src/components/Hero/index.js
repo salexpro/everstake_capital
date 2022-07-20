@@ -40,7 +40,7 @@ const Hero = () => {
           <h1>Money is cheap, expertise is priceless. We bridge the gap.</h1>
           <p className="lead">
             Everstake Capital invests in early-stage blockchain startups and
-            provide them with technical expertise.
+            shares its profound technological expertise with them.
           </p>
           <Button as={Link} to="/contact">
             Pitch idea
