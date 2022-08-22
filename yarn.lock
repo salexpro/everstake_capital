@@ -2168,7 +2168,7 @@
   resolved "https://registry.yarnpkg.com/@fontsource/ibm-plex-sans/-/ibm-plex-sans-4.5.12.tgz#fe6ee097cf6adf688361898e48cf1951cffb3d3b"
   integrity sha512-ZwLqgUcYP9ihsi+G7CvILCRy0P2lCac1T8zN8FkvO5iX8+ZRor5wre+Sm8WUrDl+jy2opP8DQQ8BVJrc8TPT9Q==
 
-"@formspree/core@^2.7.1":
+"@formspree/core@2.7.1":
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/@formspree/core/-/core-2.7.1.tgz#954e592b21f52e4074069c1ba2b08e5cb5dcfbca"
   integrity sha512-flS/REW5x/0uUAFa+TFhokWn3k0bwr6uM7gx8LWeBDhnrKjl8iKNWHexI6llNAzZUKY5Hlw8ZPMKPR9eLLV4Gw==
