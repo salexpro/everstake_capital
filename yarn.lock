@@ -1279,15 +1279,15 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@fontsource/ibm-plex-mono@4.5.9":
-  version "4.5.9"
-  resolved "https://registry.yarnpkg.com/@fontsource/ibm-plex-mono/-/ibm-plex-mono-4.5.9.tgz#96968bebc4b1ea559818a9c52c87b3854a8145ba"
-  integrity sha512-goblhmAX48GELIUQnWBg6AKVZklcTUu6NwF8tRiIzlxTZuOspbzHrW/3sF3WOH6+mJVay9n6QLbbikOfxSRekQ==
+"@fontsource/ibm-plex-mono@4.5.12":
+  version "4.5.12"
+  resolved "https://registry.yarnpkg.com/@fontsource/ibm-plex-mono/-/ibm-plex-mono-4.5.12.tgz#d33bf0d7bc39630cc46cd4e91ac8f4d5c889d720"
+  integrity sha512-ysF4GfudxLgDnpycjzrHFKqsEMOYHt0IUJN6dRECg6YLvVggLMj/SPh+w0QWjdgXkIbjqIbcho0O5mNcLCJMiQ==
 
-"@fontsource/ibm-plex-sans@4.5.10":
-  version "4.5.10"
-  resolved "https://registry.yarnpkg.com/@fontsource/ibm-plex-sans/-/ibm-plex-sans-4.5.10.tgz#5df4040f791fb8bf1d9a6d6b0171eadec2d8a07a"
-  integrity sha512-iXTnQSCeLXFZz8LEkoSlYuGGXbM35l4GdXYr88rH9WYXkhw4X1TF1+wOiXWgPWqdMZK8HNSFZHcF8JCdGnqBBA==
+"@fontsource/ibm-plex-sans@4.5.13":
+  version "4.5.13"
+  resolved "https://registry.yarnpkg.com/@fontsource/ibm-plex-sans/-/ibm-plex-sans-4.5.13.tgz#fa0ef72a2ccf4b4329c488212f31ef4e6770983d"
+  integrity sha512-7oDAqvuIArnMJck/JBqCnQZwqL4za+5xG+1Gu4enYbGcGqmUPktiuOy1i0N3XrzrNO70ZvsSt1Rdkxr2oemE6Q==
 
 "@formspree/core@^2.6.3":
   version "2.6.4"
