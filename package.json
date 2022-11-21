@@ -38,7 +38,7 @@
     "react-hook-form": "7.31.3",
     "react-terminal-component": "1.5.0",
     "sass": "1.52.1",
-    "styled-components": "5.3.5",
+    "styled-components": "5.3.6",
     "svg-parser": "2.0.4"
   },
   "devDependencies": {
