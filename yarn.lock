@@ -7405,10 +7405,10 @@ gatsby-plugin-page-creator@^4.25.0:
     globby "^11.1.0"
     lodash "^4.17.21"
 
-gatsby-plugin-purgecss@6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-purgecss/-/gatsby-plugin-purgecss-6.2.0.tgz#03311eb805b0e4e20b5ef5ead02e6163ca2df1aa"
-  integrity sha512-Atx5/bFonBNAd7kiSumuPRMSvmJc8AGbAnWYL92keyLOxgDP+j59+Yfb4xB8XUcPsQrl9suH0KnKcKi4BFlZcQ==
+gatsby-plugin-purgecss@6.2.1:
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-purgecss/-/gatsby-plugin-purgecss-6.2.1.tgz#a2f8b3a128a46c161bfd3b1c045c20709da4a964"
+  integrity sha512-cW84RSm0OfrVZ3p9Sq3vHS7kVblMtuG5u2qZIRFYHJa2NVsZys9N6BMERGNWM3tKlcpOmhcl1tuK8OwvQTyGcw==
   dependencies:
     fs-extra "^11.1.0"
     loader-utils "^3.2.1"
