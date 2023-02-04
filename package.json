@@ -37,7 +37,7 @@
     "react-helmet": "6.1.0",
     "react-hook-form": "7.43.0",
     "react-terminal-component": "1.5.0",
-    "sass": "1.57.1",
+    "sass": "1.58.0",
     "styled-components": "5.3.6",
     "svg-parser": "2.0.4"
   },
