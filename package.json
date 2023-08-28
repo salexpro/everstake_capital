@@ -5,8 +5,8 @@
   "version": "0.1.0",
   "author": "salexpro <dev@salex.pro>",
   "dependencies": {
-    "@fontsource/ibm-plex-mono": "4.5.11",
-    "@fontsource/ibm-plex-sans": "4.5.12",
+    "@fontsource/ibm-plex-mono": "4.5.13",
+    "@fontsource/ibm-plex-sans": "4.5.13",
     "@formspree/core": "2.7.1",
     "@formspree/react": "2.3.1",
     "@percy/cli": "1.9.1",
