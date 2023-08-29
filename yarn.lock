@@ -1403,12 +1403,21 @@
   dependencies:
     "@stripe/stripe-js" "^1.35.0"
 
-"@formspree/react@2.3.1":
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/@formspree/react/-/react-2.3.1.tgz#f8015e5b440839b480adb3086ea0b0f0fa7e165f"
-  integrity sha512-rmGpxekkPxKJJZA5TRkEbburZwAz1xoLlAlD0rCsYH9/Hbo9oduqbXO7VRUnbl3fnz2OY5WmmQePfYkwUKi57A==
+"@formspree/core@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@formspree/core/-/core-3.0.1.tgz#e04bdb59825ecaf727114d2f46eccc928b57ab20"
+  integrity sha512-jGNgrEtL8mx8k1kkmeNfyeoP1a+H2kci8TMG7CT3R5k3ssqr0Sl1j10SIKo74CFZVewMW4JjMYwcunWUPfutSQ==
   dependencies:
+    "@stripe/stripe-js" "^1.35.0"
+
+"@formspree/react@2.5.1":
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/@formspree/react/-/react-2.5.1.tgz#6e4fbff66a3c200365de8d54708b96510ff47702"
+  integrity sha512-Yhxyn32m3zH63i0DNpnBq55zargDlbihqC0wlK18dqU7GOUqJXKY+WywLXuTRGfqo79/hT+Qx6eFS6M0J6eh0A==
+  dependencies:
+    "@formspree/core" "^3.0.1"
     "@stripe/react-stripe-js" "^1.7.1"
+    "@stripe/stripe-js" "^1.35.0"
 
 "@gatsbyjs/parcel-namer-relative-to-cwd@^2.12.0":
   version "2.12.0"
