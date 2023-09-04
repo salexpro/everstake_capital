@@ -12,7 +12,7 @@ const Contact = () => {
 
   const [formState, setformState] = useState(null)
 
-  const [state, handleSubmit] = useForm('moqrepyk')
+  const [state, handleSubmit] = useForm('myForm')
   const { errors, submitting, succeeded } = state
 
   const handleForm = (event) => {
@@ -33,7 +33,7 @@ const Contact = () => {
   }
 
   useEffect(() => {
-    if (errors.length || succeeded) {
+    if (errors?.length || succeeded) {
       setformState(true)
       setTimeout(() => {
         setformState(false)

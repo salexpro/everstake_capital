@@ -96,7 +96,7 @@ const contactRenderer = ({
     shouldUseNativeValidation: false,
   })
 
-  const [formState, handleForm] = useFormSpree('moqrepyk')
+  const [formState, handleForm] = useFormSpree('myForm')
 
   const { errors: fsErrors, submitting, succeeded } = formState
 
@@ -226,14 +226,14 @@ const contactRenderer = ({
       )}
 
       {submitting && <span className={s.loader} />}
-      {succeeded || fsErrors.length ? (
+      {succeeded || fsErrors?.length ? (
         <>
           <br />
           <br />
           === === === === === === === === ===
           <br />
           {succeeded && "Thank you! We'll contact you soon."}
-          {fsErrors.length ? (
+          {fsErrors?.length ? (
             <span style={{ color: '#fa5252' }}>
               An error occured: {fsErrors?.[0]?.message}
             </span>
@@ -390,17 +390,20 @@ const Terminal = ({ openWebsite }) => {
       lines.reduce((acc, l, i) => {
         const output = `${acc}${l}\n`
 
-        setTimeout(() => {
-          const defaultOutputs = state.emulatorState.getOutputs()
-          const newOutputs = Outputs.addRecord(
-            defaultOutputs,
-            OutputFactory.makeTextOutput(output)
-          )
-          setState({
-            ...state,
-            emulatorState: state.emulatorState.setOutputs(newOutputs),
-          })
-        }, (i + 1) * 150)
+        setTimeout(
+          () => {
+            const defaultOutputs = state.emulatorState.getOutputs()
+            const newOutputs = Outputs.addRecord(
+              defaultOutputs,
+              OutputFactory.makeTextOutput(output)
+            )
+            setState({
+              ...state,
+              emulatorState: state.emulatorState.setOutputs(newOutputs),
+            })
+          },
+          (i + 1) * 150
+        )
         return output
       }, '')
     }
