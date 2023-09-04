@@ -1378,15 +1378,15 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.48.0.tgz#642633964e217905436033a2bd08bf322849b7fb"
   integrity sha512-ZSjtmelB7IJfWD2Fvb7+Z+ChTIKWq6kjda95fLcQKNS5aheVHn4IkfgRQE3sIIzTcSLwLcLZUD9UBt+V7+h+Pw==
 
-"@fontsource/ibm-plex-mono@4.5.13":
-  version "4.5.13"
-  resolved "https://registry.yarnpkg.com/@fontsource/ibm-plex-mono/-/ibm-plex-mono-4.5.13.tgz#f91559ab3b5074a8e2db75c0370b9640e80c99b2"
-  integrity sha512-KAE7X2LgCV4X6p7vj1h2phRnhPX4YUa8FBAB0Jj9xW7Q+p+k2ce4HEAMJJ2RFHI075ClgQx+KZuDBNuiKgp5yw==
+"@fontsource/ibm-plex-mono@5.0.8":
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@fontsource/ibm-plex-mono/-/ibm-plex-mono-5.0.8.tgz#0fa47c935e0f15333afa074d739d7965bdca5067"
+  integrity sha512-AoR7K2YtlGKy3LApyLYjqjyz0o8XtkRvbB/juMsGSGNayBBAly140ykZls+VxcXjZSLQpp2RyxKo6lYOuHPmUw==
 
-"@fontsource/ibm-plex-sans@4.5.13":
-  version "4.5.13"
-  resolved "https://registry.yarnpkg.com/@fontsource/ibm-plex-sans/-/ibm-plex-sans-4.5.13.tgz#fa0ef72a2ccf4b4329c488212f31ef4e6770983d"
-  integrity sha512-7oDAqvuIArnMJck/JBqCnQZwqL4za+5xG+1Gu4enYbGcGqmUPktiuOy1i0N3XrzrNO70ZvsSt1Rdkxr2oemE6Q==
+"@fontsource/ibm-plex-sans@5.0.11":
+  version "5.0.11"
+  resolved "https://registry.yarnpkg.com/@fontsource/ibm-plex-sans/-/ibm-plex-sans-5.0.11.tgz#1110d0a4b4f6151203e527f38228563b0cc4a8da"
+  integrity sha512-e2TuglafzDB6nErT2u2lFt8W4t5Sq9rj2twr+06I5EXeTgaP1edcUAUMywtzIpWh721SEhG7uR40G9dkLxtFIg==
 
 "@formspree/core@3.0.1", "@formspree/core@^3.0.1":
   version "3.0.1"
