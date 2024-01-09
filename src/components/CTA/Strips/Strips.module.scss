@@ -4,14 +4,18 @@
   font-size: 60px;
   font-family: $headings-font-family;
   letter-spacing: -0.01em;
-  font-feature-settings: 'zero' on, 'salt' on, 'ss03' on, 'ss05' on;
+  font-feature-settings:
+    'zero' on,
+    'salt' on,
+    'ss03' on,
+    'ss05' on;
   height: 106px;
   // border-radius: 20px;
   @include b-d(md) {
     height: 74px;
     font-size: 40px;
   }
-  &:global(.marquee-container) {
+  &[style] {
     width: 1884px;
     position: absolute;
     top: calc(50% - 53px);
