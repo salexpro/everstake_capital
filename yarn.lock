@@ -1446,14 +1446,7 @@
   resolved "https://registry.yarnpkg.com/@fontsource/ibm-plex-sans/-/ibm-plex-sans-4.5.13.tgz#fa0ef72a2ccf4b4329c488212f31ef4e6770983d"
   integrity sha512-7oDAqvuIArnMJck/JBqCnQZwqL4za+5xG+1Gu4enYbGcGqmUPktiuOy1i0N3XrzrNO70ZvsSt1Rdkxr2oemE6Q==
 
-"@formspree/core@3.0.3":
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/@formspree/core/-/core-3.0.3.tgz#6fde9011dff49e34dab01911e115693de0301b3e"
-  integrity sha512-6dc5q4noM+f4U1aZ4CInry+vThd8uptg9BRf/JlnL0MHKSZdKxzabsjZquxvNYSlSzTC7boYyTxqKgEi1Cmcog==
-  dependencies:
-    "@stripe/stripe-js" "^1.35.0"
-
-"@formspree/core@^3.0.3":
+"@formspree/core@3.0.4", "@formspree/core@^3.0.3":
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/@formspree/core/-/core-3.0.4.tgz#6eed588f4d9e5bfff760aa668489e5c6d5e85d68"
   integrity sha512-VpdvQfSbcD4smrk1Gb5RJPBYBWmiNVWkiZs6ddu7afnu/OjKGlIPVo42LNNS5ht2joabcTCiyOZgATjqOdqs+g==
